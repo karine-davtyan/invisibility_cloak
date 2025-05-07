@@ -1,23 +1,44 @@
-# Real‑Time Invisibility Cloak with GUI & Docker
+ Real-Time Invisibility Cloak GUI
 
-## Overview
-This application applies a real‑time "invisibility cloak" effect using semantic segmentation. It features:
+This project applies a “cloak” effect by semantically segmenting out people in your webcam feed (DeepLabV3+ResNet101) and compositing a static background. It runs in a PyQt5 GUI and can be containerized with Docker.
 
-- A PyQt5 GUI with sliders for blur radius and threshold
-- Button to load a custom background image
-- Live video preview in the app window
-- Dockerfile for easy containerization and deployment
+## Features
+
+- Live webcam preview with real-time person masking  
+- Adjustable **Blur Radius** and **Threshold** sliders  
+- **Capture Background** (from camera) or **Load Background** (from image file)  
+- Packaged via Docker for easy deployment
+
+## Requirements
+
+- Python 3.9+  
+- GPU optional (CPU works, but slower)  
+- Windows/macOS/Linux
 
 ## Setup
 
-1. Clone this repo:
+1. Clone the repo  
    ```bash
-   git clone https://github.com/yourusername/invisibility_cloak_gui.git
+   git clone https://github.com/<your-username>/invisibility_cloak_gui.git
    cd invisibility_cloak_gui
+Create & activate a virtual environment
 
-## With Docker or locally
-docker build -t inviscloak-gui .
-docker run --rm --device /dev/video0 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix inviscloak-gui
+bash
+Copy
+Edit
+python -m venv .venv
+.venv\Scripts\activate     # Windows
+source .venv/bin/activate  # macOS/Linux
+Install Python dependencies
 
+bash
+Copy
+Edit
+pip install --upgrade pip
 pip install -r requirements.txt
+Run the GUI
+
+bash
+Copy
+Edit
 python invisibility_cloak_gui.py
