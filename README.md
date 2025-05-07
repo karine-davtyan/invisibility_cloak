@@ -1,4 +1,4 @@
- Real-Time Invisibility Cloak GUI
+## Real-Time Invisibility Cloak GUI
 
 This project applies a “cloak” effect by semantically segmenting out people in your webcam feed (DeepLabV3+ResNet101) and compositing a static background. It runs in a PyQt5 GUI and can be containerized with Docker.
 
@@ -23,15 +23,15 @@ This project applies a “cloak” effect by semantically segmenting out people 
    cd invisibility_cloak_gui
 Create & activate a virtual environment
 
-bash
-Copy
+```bash
+ Copy
 Edit
 python -m venv .venv
 .venv\Scripts\activate     # Windows
 source .venv/bin/activate  # macOS/Linux
 Install Python dependencies
 
-bash
+```bash
 Copy
 Edit
 pip install --upgrade pip
